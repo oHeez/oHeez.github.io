@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #header {
+            background-color: #800080; /* Lilás */
+            color: #ffffff;
+            display: flex; /* Usar flexbox para alinhar itens horizontalmente */
+            align-items: center; /* Alinhar verticalmente ao centro */
+            justify-content: space-between; /* Espaço entre itens, coloca a imagem à direita */
+            padding: 20px;
+            border-radius: 0 0 10px 10px; /* Borda superior arredondada */
+        }
+
+        #header img {
+            max-width: 100px;
+            border-radius: 50%;
+        }
+        
+        #content {
+            margin: 40px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px; /* Borda arredondada */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+        
+        h1 {
+            color: #800080; /* Lilás */
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            cursor: pointer; /* Cursor de mão ao passar o mouse sobre as seções */
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .section-content {
+            display: none; /* Inicialmente, as informações estão escondidas */
+        }
+
+        .section:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Estilo para os links do menu quando hover */
+        .section:hover h2 {
+            color: #800080; /* Lilás */
+            font-weight: bold;
+        }
+
+        /* Estilo para o nome */
+        #name {
+            font-size: 24px;
+            text-align: left; /* Alinhar à esquerda */
+        }
+
+        /* Estilo para o título "Meu Currículo Online" */
+        #title {
+            font-size: 28px; /* Tamanho aumentado */
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div>
+            <div id="title">Meu Currículo Online</div>
+            <div id="name">Felipe Tavares da Costa</div>
+        </div>
+        <img src="https://i.pinimg.com/236x/39/81/ff/3981ffbca6b8951e8e0195d230132a1c.jpg" alt="Foto do Estudante">
+    </div>
+
+    <div id="content">
+        <section id="experiencia" class="section">
+            <h2>Experiência Profissional</h2>
+            <div class="section-content">
+                <p>Entendimento básico da linguagem Python, Básico de orientação a objetos utilizando a linguagem Java, Básico de HTML, CSS e JavaScript.</p>
+            </div>
+        </section>
+
+        <section id="contato" class="section">
+            <h2>Contato</h2>
+            <div class="section-content">
+                <p>Via telefone: (87)99856 7569</p>
+                <p>Via e-mail: felipinholpw@gmail.com</p>
+            </div>
+        </section>
+
+        <section id="ocupacao" class="section">
+            <h2>Ocupação</h2>
+            <div class="section-content">
+                <p>Estudante de ensino médio da Rede Federal do Brasil</p>
+            </div>
+        </section>
+
+        <section id="instituicao" class="section">
+            <h2>Instituição</h2>
+            <div class="section-content">
+                <p>IFPE Campus Garanhuns</p>
+            </div>
+        </section>
+
+        <section id="curso" class="section">
+            <h2>Curso</h2>
+            <div class="section-content">
+                <p>Informática</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const sections = document.querySelectorAll('.section');
+
+        sections.forEach(section => {
+            const content = section.querySelector('.section-content');
+            section.addEventListener('click', () => {
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>
