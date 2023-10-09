@@ -1,2 +1,2 @@
-email = 'felipetavarescosta96@gmail.com'
-senha = 'karatebrasil123'
+email = 'felipeheez@gmail.com'
+senha = 'caracarambacaracarao123'
