@@ -266,7 +266,8 @@
                     <div class="col-md-7 mt-5 mt-md-0">
                         <div class="card p-5 h-100 shadow border-0">
 
-                            <form class="row g-3" action='/send' method="POST">
+                            <form class="row g-3" action="https://formsubmit.co/ajax/felipeheez@gmail.com" method="POST"
+                            data-form>
                                 <div class="col-md-6">
                                     <label for="nome" class="form-label">Nome:</label>
                                     <input type="text" class="form-control" id="nome" name="nome"
@@ -283,7 +284,7 @@
                                         placeholder="Digite sua mensagem"></textarea>
                                 </div>
                                 <div class="col-12 d-flex justify-content-center mt-4">
-                                    <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+                                    <button type="submit" class="btn btn-primary" data-button>Enviar mensagem</button>
                                 </div>
                             </form>
 
@@ -299,6 +300,7 @@
 
     <script src="../static/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../static/script.js"></script>
+    <script src="../static/app.js"></script>
 </body>
 
 </html>
