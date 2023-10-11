@@ -1,62 +1,31 @@
-class FormSubmit {
-    constructor(settings) {
-        this.settings = settings;
-        this.form = document.querySelector(settings.form);
-        if (this.form) {
-            this.url = this.form.getAttribute("action");
-        }
-    }
+document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById("contact-form");
+    const successMessage = document.getElementById("success-message");
+    const errorMessage = document.getElementById("error-message");
 
-    displaySuccess() {
-        const successMessage = document.getElementById("success-message");
-        successMessage.style.display = "block";
+    contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-        // Rolando para o início após 1 segundos
-        setTimeout(() => {
-            window.scrollTo(0, 0);
-            // Recarregando a página após 1 segundos
-            setTimeout(() => {
-                location.reload();
-            }, 1000); // Ajuste o tempo conforme necessário
-        }, 1000); // Ajuste o tempo conforme necessário
-    }
+        // Simular envio
+        setTimeout(function () {
+            // Verifica se o formulário é válido (adicione verificações personalizadas se necessário)
+            if (contactForm.checkValidity()) {
+                // Exibir mensagem de sucesso e recarregar a página
+                successMessage.style.display = "block";
+                errorMessage.style.display = "none";
 
-    displayError() {
-        const errorMessage = document.getElementById("error-message");
-        errorMessage.style.display = "block";
-        setTimeout(() => {
-            errorMessage.style.display = "none";
-        }, 1000); // Oculta a mensagem de erro após 1 segundos
-    }
+                // Você pode adicionar aqui ações adicionais, como enviar os dados para um servidor ou salvá-los localmente.
 
-    init() {
-        if (this.form) {
-            this.form.addEventListener("submit", async (event) => {
-                event.preventDefault();
-                const formData = new FormData(this.form);
-
-                try {
-                    const response = await fetch(this.url, {
-                        method: "POST",
-                        body: formData,
-                    });
-
-                    if (response.ok) {
-                        this.displaySuccess();
-                    } else {
-                        this.displayError();
-                    }
-                } catch (error) {
-                    this.displayError();
-                }
-            });
-        }
-    }
-}
-
-const formSubmit = new FormSubmit({
-    form: "[data-form]",
-    button: "[data-button]",
+                setTimeout(function () {
+                    window.location.reload();
+                }, 3000); // Recarregar após 3 segundos
+            } else {
+                // Exibir mensagem de erro (se o formulário não for válido)
+                successMessage.style.display = "none";
+                errorMessage.style.display = "block";
+            }
+        }, 1000); // Simula o envio por 1 segundo (você pode ajustar esse tempo conforme necessário)
+    });
 });
-formSubmit.init();
+
 
